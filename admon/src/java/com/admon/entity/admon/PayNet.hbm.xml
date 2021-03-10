@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.admon.entity.admon.PayNet" table="CONFIG_FORMA_PAGO_AFILIACION">
+    <id name="payNetId" type="java.lang.Integer"> 
+        <column name="CONFIG_FORMA_PAGO_ID"/>
+    </id>
+    <property name="eventoId" type="java.lang.Integer">
+      <column name="EVENTO_ID"/>
+    </property>
+    <property name="afiliacion" type="string">
+      <column name="AFILIACION"/>
+    </property>
+    <property name="userName" type="string">
+      <column name="USER_NAME"/>
+    </property>
+    <property name="password" type="string">
+      <column name="PASSWORD"/>
+    </property>
+    <property name="signature" type="string">
+      <column name="SIGNATURE"/>
+    </property>
+    <property name="creacionFecha" type="timestamp">
+        <column name="CREACION_FECHA"/>
+    </property>
+    <property name="creacionUsuario" type="java.lang.Integer">
+        <column name="CREACION_USUARIO"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteEstadoCuenta_Main" pageWidth="1725" pageHeight="1190" orientation="Landscape" columnWidth="1685" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="17b3dc79-e3d2-4de7-a853-585a32afd25b">
+	<property name="ireport.zoom" value="0.9090909090909095"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#C6C6C6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#DCDCDC"/>
+		</conditionalStyle>
+	</style>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#C3CFD9">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#E6F3FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#F8FCFF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="cd6addef-ea64-457b-8268-0e8442b449ea"/>
+	<subDataset name="DataSourceEncabezado" uuid="9e6f88e9-707c-4ed7-b7e0-aa7210583ba3">
+		<field name="nombreEvento" class="java.lang.String"/>
+		<field name="nombrePresentacion" class="java.lang.String"/>
+		<field name="tipoBoleto" class="java.lang.String"/>
+		<field name="noBoletos" class="java.lang.Integer"/>
+		<field name="total" class="java.lang.Double"/>
+		<field name="monto" class="java.lang.Double"/>
+		<field name="descuento" class="java.lang.Double"/>
+		<field name="cargoXServicio" class="java.lang.Double"/>
+		<field name="comisionTaasgo" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="DataSourceDetalle" uuid="9e6f88e9-707c-4ed7-b7e0-aa7210583ba4">
+		<field name="nombreEvento" class="java.lang.String"/>
+		<field name="nombrePresentacion" class="java.lang.String"/>
+		<field name="canalVenta" class="java.lang.String"/>
+		<field name="mesFactura" class="java.lang.String"/>
+		<field name="noBoletos" class="java.lang.Integer"/>
+		<field name="balance" class="java.lang.Double"/>
+		<field name="total" class="java.lang.Double"/>
+		<field name="monto" class="java.lang.Double"/>
+		<field name="descuento" class="java.lang.Double"/>
+		<field name="cargoXServicio" class="java.lang.Double"/>
+		<field name="comisionTaasgo" class="java.lang.Double"/>
+		<field name="tipoBoleto" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/Users/edgar/NetBeansProjects/admon/web/jasper/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGEN_DIR" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="NombreRazonSocial" class="java.lang.String"/>
+	<parameter name="NombreComercial" class="java.lang.String"/>
+	<parameter name="RFC" class="java.lang.String"/>
+	<parameter name="Domicilio" class="java.lang.String"/>
+	<parameter name="FechaLimitePago" class="java.util.Date"/>
+	<parameter name="IVA" class="java.lang.Double"/>
+	<parameter name="NombreEvento" class="java.lang.String"/>
+	<parameter name="NoBoletos" class="java.lang.Integer"/>
+	<parameter name="Total" class="java.lang.Double"/>
+	<parameter name="Monto" class="java.lang.Double"/>
+	<parameter name="Descuento" class="java.lang.Double"/>
+	<parameter name="CargoXServicio" class="java.lang.Double"/>
+	<parameter name="ComisionTasgo" class="java.lang.Double"/>
+	<parameter name="NoCortesias" class="java.lang.Integer"/>
+	<parameter name="NoCancelaciones" class="java.lang.Integer"/>
+	<parameter name="NoBoletoDuro" class="java.lang.Integer"/>
+	<parameter name="PorcentajeXCortesia" class="java.lang.Double"/>
+	<parameter name="PorcentajeXCancelacion" class="java.lang.Double"/>
+	<parameter name="PorcentajeXBoletoDuro" class="java.lang.Double"/>
+	<parameter name="DataSourceEncabezado" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="DataSourceEncabezado2" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nombreEvento" class="java.lang.String"/>
+	<field name="nombrePresentacion" class="java.lang.String"/>
+	<field name="canalVenta" class="java.lang.String"/>
+	<field name="mesFactura" class="java.lang.String"/>
+	<field name="noBoletos" class="java.lang.Integer"/>
+	<field name="balance" class="java.lang.Double"/>
+	<field name="total" class="java.lang.Double"/>
+	<field name="monto" class="java.lang.Double"/>
+	<field name="descuento" class="java.lang.Double"/>
+	<field name="cargoXServicio" class="java.lang.Double"/>
+	<field name="comisionTaasgo" class="java.lang.Double"/>
+	<field name="tipoBoleto" class="java.lang.String"/>
+	<variable name="TotalCortesias" class="java.lang.Double">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{NoCortesias}*$P{PorcentajeXCortesia}]]></initialValueExpression>
+	</variable>
+	<variable name="TotalCancelaciones" class="java.lang.Double">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{NoCancelaciones}*$P{PorcentajeXCancelacion}]]></initialValueExpression>
+	</variable>
+	<variable name="TotalBoletoDuro" class="java.lang.Double">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{NoBoletoDuro}*$P{PorcentajeXBoletoDuro}]]></initialValueExpression>
+	</variable>
+	<variable name="SubTotal" class="java.lang.Double">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{ComisionTasgo}+$V{TotalCortesias}+$V{TotalCancelaciones}+$V{TotalBoletoDuro}]]></initialValueExpression>
+	</variable>
+	<variable name="IVA" class="java.lang.Double">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[$V{SubTotal}*$P{IVA}]]></initialValueExpression>
+	</variable>
+	<variable name="Total" class="java.lang.Double">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[$V{SubTotal}+$V{IVA}]]></initialValueExpression>
+	</variable>
+	<variable name="TotalBoletos" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{noBoletos}]]></variableExpression>
+	</variable>
+	<variable name="TotalTotal" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{total}]]></variableExpression>
+	</variable>
+	<variable name="TotalMonto" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{monto}]]></variableExpression>
+	</variable>
+	<variable name="TotalDescuento" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{descuento}]]></variableExpression>
+	</variable>
+	<variable name="TotalCargoXServicio" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{cargoXServicio}]]></variableExpression>
+	</variable>
+	<variable name="TotalComisionTasgo" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{comisionTaasgo}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="263" splitType="Stretch">
+			<staticText>
+				<reportElement x="208" y="107" width="122" height="20" uuid="ad022dbb-15c8-47aa-b726-5fbcbdad8568"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado de Cuenta]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy" isBlankWhenNull="true">
+				<reportElement x="208" y="127" width="122" height="20" uuid="1ff72fc3-b03a-43c3-a85e-877f35b03450"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="593" y="87" width="366" height="20" uuid="f52a62a6-45a4-435a-b547-f1c005fbfbba"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RFC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="593" y="7" width="366" height="20" uuid="ad60bb1f-cd40-4eb1-b597-5db3d152cc7e"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre o Razón social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="593" y="127" width="366" height="20" uuid="c3efe04f-3a97-4a1b-8291-bde28986106d"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Domicilio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="593" y="47" width="366" height="20" uuid="a446a2a4-feaf-4519-aa5a-cfac305c53ed"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre comercial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="593" y="167" width="366" height="20" uuid="d153a7ff-65f1-43b1-b4dd-ee2a691df6c6"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="593" y="207" width="366" height="20" uuid="55416262-9967-4cca-b71f-7cd824e8c981"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha limite de pago]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="593" y="27" width="366" height="20" uuid="8f668c99-b440-4999-b05d-760987babc74"/>
+				<textFieldExpression><![CDATA[$P{NombreRazonSocial}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="593" y="67" width="366" height="20" uuid="bd45f302-2f78-4730-9003-e242d69baf59"/>
+				<textFieldExpression><![CDATA[$P{NombreComercial}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="593" y="107" width="366" height="20" uuid="a8d2bc55-4ba4-48aa-80ae-fc179dbca981"/>
+				<textFieldExpression><![CDATA[$P{RFC}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="593" y="147" width="366" height="20" uuid="c120d407-dc13-4e31-9b68-cbb99a943a24"/>
+				<textFieldExpression><![CDATA[$P{Domicilio}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="593" y="227" width="366" height="20" uuid="e4834ef7-d639-432e-9dbf-22b1b4df33cf"/>
+				<textFieldExpression><![CDATA[$P{FechaLimitePago}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement x="593" y="187" width="366" height="20" uuid="2409790a-9886-4d37-acb1-abbcb4ba61c4"/>
+				<textFieldExpression><![CDATA[$V{Total}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="151" y="0" width="262" height="107" uuid="2c1288ca-628e-4c35-81ba-a8d81daf089d"/>
+				<imageExpression><![CDATA[$P{IMAGEN_DIR}]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement x="582" y="3" width="638" height="249" backcolor="#CCCCCC" uuid="b54e70f5-c8ee-4711-b7a4-c062b56378b6"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="772" y="3" width="100" height="20" uuid="5c029c25-4065-4c16-a78f-4948609e380b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESUMEN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="226" height="20" uuid="355b7ee5-3395-4e04-984a-fdb8a619fd4d">
+					<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE EVENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="0" width="343" height="20" uuid="03927625-955b-451b-b8ff-d644f6e45672">
+					<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE PRESENTACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="569" y="0" width="165" height="20" uuid="7ebaa883-9003-4847-a300-e329f76fe425"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO BOLETO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1534" y="0" width="150" height="20" uuid="45cdfff2-4d34-434b-a06a-a1e7db4a8355"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMISION TAASGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="734" y="0" width="165" height="20" uuid="82d285b8-2e5c-40d1-b674-e1a553d247ee"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[# BOLETOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="899" y="0" width="177" height="20" uuid="7c3940c7-5e30-4d27-ba56-8632daf1846d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1076" y="0" width="151" height="20" uuid="4dd6a36b-f045-459c-a36f-aae74d22aca1"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MONTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1227" y="0" width="144" height="20" uuid="607851f2-7a8f-4b4b-ab0d-908ef60c989d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCUENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1371" y="0" width="163" height="20" uuid="2d3b6c58-a852-482e-9d5a-6ad7a5351fa7"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CARGO X SERVICIO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="226" height="20" uuid="318396e9-8be4-449a-abd9-1dc4ed4c0e80"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEvento}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="226" y="0" width="343" height="20" uuid="bd988fb6-0056-460c-a243-551a4714ee94"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombrePresentacion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="569" y="0" width="165" height="20" uuid="a9cea63c-e4d5-460f-b35d-7d06cabe6aca"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoBoleto}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="734" y="0" width="165" height="20" uuid="8bbb2fce-c98a-4855-ac8a-00b6f5b1c5ba"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noBoletos}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement x="899" y="0" width="177" height="20" uuid="ab1ed8e5-27c8-40e1-8aee-a99be2493b8a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement x="1076" y="0" width="151" height="20" uuid="fcba4f8d-fdab-4254-9387-f294fde53cf0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement x="1227" y="0" width="144" height="20" uuid="97839837-5a2d-4ae5-b92a-634f99478515"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descuento}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement x="1371" y="0" width="163" height="20" uuid="82de6650-4abe-4619-a2c0-c69f5fa2b56d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cargoXServicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement x="1534" y="0" width="150" height="20" uuid="69e5a3e2-7392-4c4d-b278-175d311649d9"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comisionTaasgo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="100" splitType="Stretch">
+			<subreport>
+				<reportElement x="659" y="0" width="200" height="100" uuid="09eb0f73-bf58-45cd-b684-3b5f6742b6b5"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="NombreRazonSocial"/>
+				<subreportParameter name="NombreComercial"/>
+				<subreportParameter name="RFC"/>
+				<subreportParameter name="Domicilio"/>
+				<subreportParameter name="FechaLimitePago"/>
+				<subreportParameter name="IVA"/>
+				<subreportParameter name="NombreEvento"/>
+				<subreportParameter name="NoBoletos"/>
+				<subreportParameter name="Total"/>
+				<subreportParameter name="Monto"/>
+				<subreportParameter name="Descuento"/>
+				<subreportParameter name="CargoXServicio"/>
+				<subreportParameter name="ComisionTasgo"/>
+				<subreportParameter name="NoCortesias"/>
+				<subreportParameter name="NoCancelaciones"/>
+				<subreportParameter name="NoBoletoDuro"/>
+				<subreportParameter name="PorcentajeXCortesia"/>
+				<subreportParameter name="PorcentajeXCancelacion"/>
+				<subreportParameter name="PorcentajeXBoletoDuro"/>
+				<subreportExpression><![CDATA["/Users/edgar/NetBeansProjects/admon/web/jasper/reporteEstadoCuenta_Main.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="44" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="46" splitType="Stretch"/>
+	</summary>
+</jasperReport>

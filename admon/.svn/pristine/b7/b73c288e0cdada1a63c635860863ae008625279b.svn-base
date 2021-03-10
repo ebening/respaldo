@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.admon.pkg.entity.EstadoCuentaEncabezadoRS">
+        <id name="identificador" type="java.lang.Integer" column="IDENTIFICADOR"/>
+        <property name="nombreEvento" type="java.lang.String" column="NOMBRE_EVENTO"/>
+        <property name="nombrePresentacion" type="java.lang.String" column="NOMBRE_PRESENTACION"/>
+        <property name="tipoBoleto" type="java.lang.String" column="CLAVE_TIPO_BOLETO"/>
+        <property name="noBoletos" type="java.lang.Integer" column="CON_BOLETOS"/>
+        <property name="total" type="java.lang.Double" column="TOTAL"/>
+        <property name="monto" type="java.lang.Double" column="MONTO"/>
+        <property name="descuento" type="java.lang.Double" column="DESCUENTO"/>
+        <property name="cargoXServicio" type="java.lang.Double" column="CARGO_SERVICIO"/>
+        <property name="comisionTaasgo" type="java.lang.Double" column="GANANCIA"/>
+    </class>
+</hibernate-mapping>

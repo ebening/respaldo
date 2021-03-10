@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.admon.entity.admon.ZonaHoraria" table="ZONA_HORARIAS_V">
+        <id name="zonaId" type="java.lang.Integer" column="ZONA_ID"/>
+        <property name="nombre" type="string">
+            <column name="NOMBRE"/>
+        </property>
+        <property name="lenguajeId" type="java.lang.Integer">
+            <column name="LENGUAJE_ID"/>
+        </property>
+    </class>
+</hibernate-mapping>
+

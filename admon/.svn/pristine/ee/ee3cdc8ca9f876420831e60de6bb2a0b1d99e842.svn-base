@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.admon.entity.admon.SeguridadRolRestriccionPar" table="SEGURIDAD_ROL_RESTRICCION_PAR">
+        <composite-id>
+            <key-property name="rolId"  type="java.lang.Integer" column="ROL_ID"/>
+            <key-property name="catalogoParametroId"  type="java.lang.Integer" column="CATALOGO_PARAMETRO_ID" />
+            <key-property name="organizacionId"  type="java.lang.Integer" column="ORGANIZACION_ID" />
+        </composite-id>
+        <property name="aplicacionId" type="java.lang.Integer">
+            <column name="APLICACION_ID"/>
+        </property>
+        <property name="creacionFecha" type="timestamp">
+            <column name="CREACION_FECHA"/>
+        </property>
+        <property name="creacionUsuario" type="java.lang.Integer">
+            <column name="CREACION_USUARIO"/>
+        </property>
+    </class>
+</hibernate-mapping>

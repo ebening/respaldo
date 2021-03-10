@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.admon.entity.reportes.Presentacion" table="PRESENTACION">
+        <id name="presentacionId" type="java.lang.Integer">
+            <column name="PRESENTACION_ID"/>
+            <generator class="increment"/>
+        </id>
+        <property name="eventoId" type="java.lang.Integer">
+            <column name="EVENTO_ID"/>
+        </property>
+        <property name="nombre" type="java.lang.String">
+            <column name="PRESENTACION_NOMBRE"/>
+        </property>
+    </class>
+</hibernate-mapping>

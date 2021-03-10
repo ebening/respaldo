@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.admon.entity.admon.TerminalBanamex" table="AFILIACION_BANAMEX_TERMINAL">
+    <id name="terminalBanamexId" type="string"> 
+        <column name="BANAMEX_TERMINAL_ID"/>
+     </id>
+    <property name="afiliacionBanamex" type="string">
+      <column name="AFILIACION"/>
+    </property>
+    <property name="puntoVentaTerminal" type="java.lang.Integer">
+      <column name="PUNTO_VENTA_TERMINAL_ID"/>
+    </property>
+    <property name="merchant" type="string">
+      <column name="MERCHANT"/>
+    </property>
+    <property name="accessCode" type="string">
+      <column name="ACCESS_CODE"/>
+    </property>
+    <property name="cancelacion" type="java.lang.Integer">
+      <column name="CANCELACION"/>
+    </property>
+    <property name="creacionFecha" type="timestamp">
+        <column name="CREACION_FECHA"/>
+    </property>
+    <property name="creacionUsuario" type="java.lang.Integer">
+        <column name="CREACION_USUARIO"/>
+    </property>
+    <property name="modificacionFecha" type="timestamp">
+        <column name="MODIFICACION_FECHA"/>
+    </property>
+    <property name="modificacionUsuario" type="java.lang.Integer">
+        <column name="MODIFICACION_USUARIO"/>
+    </property>
+  </class>
+</hibernate-mapping>

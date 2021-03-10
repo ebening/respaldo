@@ -1,0 +1,15 @@
+/* 
+    Created on : 19-jul-2017, 17:03:41
+    Author     : edgar
+*/
+
+.col-xs-10_star {
+    position:relative;
+}
+.required_star:after {
+    content:" *";
+    
+    top: 0;
+    
+    color:red;
+}

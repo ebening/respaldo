@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.admon.entity.admon.AfiliacionSantander" table="AFILIACION_SANTANDER">
+    <id name="afiliacionSantanderId" type="java.lang.Long">
+      <column name="AFILIACION_SANTANDER_ID"/>
+      <generator class="sequence">
+        <param name="sequence">AFILIACION_SANTANDER_SEQ</param>
+      </generator>
+    </id>
+    <property name="afiliacion" type="string">
+      <column name="AFILIACION"/>
+    </property>
+    <property name="url" type="string">
+      <column name="URL"/>
+    </property>
+    <property name="baseCobro" type="string">
+      <column name="BASE_COBRO"/>
+    </property>
+    <property name="baseCancelacion" type="string">
+      <column name="BASE_CANCELACION"/>
+    </property>
+    <property name="base3ds" type="string">
+      <column name="BASE_3DS"/>
+    </property>
+    <property name="semilla" type="string">
+      <column name="SEMILLA"/>
+    </property>
+    <property name="semillaConsulta" type="string">
+      <column name="SEMILLA_CONSULTA"/>
+    </property>
+    <property name="semilla3ds" type="string">
+      <column name="SEMILLA_3DS"/>
+    </property>
+    <property name="usuario" type="string">
+      <column name="USUARIO"/>
+    </property>
+    <property name="contrasena" type="string">
+      <column name="CONTRASENA"/>
+    </property>
+    <property name="usuarioAdmin" type="string">
+      <column name="USUARIO_ADMIN"/>
+    </property>
+    <property name="contrasenaAdmin" type="string">
+      <column name="CONTRASENA_ADMIN"/>
+    </property>
+    <property name="idCompany" type="string">
+      <column name="ID_COMPANY"/>
+    </property>
+    <property name="typec" type="string">
+      <column name="TYPEC"/>
+    </property>
+    <property name="merchant" type="string">
+      <column name="MERCHANT"/>
+    </property>
+    <property name="operacion" type="string">
+      <column name="OPERACION"/>
+    </property>
+    <property name="crypto" type="string">
+      <column name="CRYPTO"/>
+    </property>
+    <property name="country" type="string">
+      <column name="COUNTRY"/>
+    </property>
+    <property name="tipoMonedaId" type="java.lang.Integer">
+      <column name="TIPO_MONEDA"/>
+    </property>
+    <property name="idBranch" type="string">
+      <column name="ID_BRANCH"/>
+    </property>
+    <property name="amex" type="java.lang.Integer">
+      <column name="AMEX"/>
+    </property>
+    <property name="afiliacionAmex" type="string">
+      <column name="AFILIACION_AMEX"/>
+    </property>
+    <property name="merchantAmex" type="string">
+      <column name="MERCHANT_AMEX"/>
+    </property>
+    <property name="nombreEmpresa" type="string">
+      <column name="NOMBRE_EMPRESA"/>
+    </property>
+    <property name="direccionEmpresa" type="string">
+      <column name="DIRECCION_EMPRESA"/>
+    </property>
+    <property name="descripcion" type="string">
+      <column name="DESCRIPCION"/>
+    </property>
+    <property name="valida3ds" type="java.lang.Integer">
+      <column name="VALIDA_3DS"/>
+    </property>
+    <property name="validaSdos" type="java.lang.Integer">
+      <column name="VALIDA_SDOS"/>
+    </property>
+    <property name="orderSourceSdos" type="string">
+      <column name="ORDER_SOURCE_SDOS"/>
+    </property>
+    <property name="claveEstatus" type="string">
+      <column name="CLAVE_ESTATUS"/>
+    </property>
+    <property name="empresaAfiliacionId" type="java.lang.Long">
+      <column name="EMPRESA_AFILIACION_ID"/>
+    </property>
+    <property name="claveInstitucionBancaria" type="string">
+      <column name="CLAVE_INSTITUCION_BANCARIA"/>
+    </property>
+    <property name="orderSourceMovil" type="string">
+      <column name="ORDER_SOURCE_MOVIL"/>
+    </property>
+    <property name="dataI" type="string">
+      <column name="DATA_I"/>
+    </property>
+    <property name="dataK" type="string">
+      <column name="DATA_K"/>
+    </property>
+    <property name="tipoCanalVentaId" type="java.lang.Integer">
+      <column name="TIPO_CANAL_VENTA"/>
+    </property>
+    <property name="canalVentaId" type="java.lang.Integer">
+      <column name="CANAL_VENTA"/>
+    </property>
+    <property name="afiliacionDefault" type="java.lang.Integer">
+      <column name="AFILIACION_DEFAULT"/>
+    </property>
+    <property name="tieneParcializacion" type="string">
+      <column name="TIENE_PARCIALIZACION"/>
+    </property>
+    <property name="creacionFecha" type="timestamp">
+      <column name="CREACION_FECHA"/>
+    </property>
+    <property name="creacionUsuario" type="java.lang.Integer">
+      <column name="CREACION_USUARIO"/>
+    </property>
+    <property name="modificacionFecha" type="timestamp">
+        <column name="MODIFICACION_FECHA"/>
+    </property>
+    <property name="modificacionUsuario" type="java.lang.Integer">
+      <column name="MODIFICACION_USUARIO"/>
+    </property>
+    <property name="estatusId" type="java.lang.Integer">
+      <column name="ESTATUS_ID"/>
+    </property>
+    <property name="eliminadoId" type="java.lang.Integer">
+      <column name="ELIMINADO_ID"/>
+    </property>
+  </class>
+</hibernate-mapping>

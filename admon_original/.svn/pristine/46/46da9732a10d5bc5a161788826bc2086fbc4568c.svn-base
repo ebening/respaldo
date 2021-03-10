@@ -1,0 +1,12 @@
+
+	 UPDATE CONFIGURACION_PARAMETRO
+	 SET  VALOR = '/app/taasgo/repositorio/web/'
+	 WHERE CONFIGURACION_PARAMETRO_ID = 81;
+	 
+	 UPDATE CONFIGURACION_PARAMETRO
+	 SET  VALOR = '/app/taasgo/repositorio/taquilla/organizacion/'
+	 WHERE CONFIGURACION_PARAMETRO_ID = 82;
+	 
+	  UPDATE CONFIGURACION_PARAMETRO
+	 SET  VALOR = '/app/taasgo/repositorio/impresiones/organizacion/'
+	 WHERE CONFIGURACION_PARAMETRO_ID = 83;

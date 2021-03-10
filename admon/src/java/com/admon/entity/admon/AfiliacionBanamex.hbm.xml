@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.admon.entity.admon.AfiliacionBanamex" table="AFILIACION_BANAMEX">
+    <id name="afiliacionBanamexId" type="java.lang.Integer"> 
+        <column name="AFILIACION_BANAMEX_ID"/>
+        <generator class="sequence">
+            <param name="sequence">AFILIACION_BANAMEX_SEQ</param> 
+        </generator>
+     </id>
+    <property name="afiliacionBanamex" type="string">
+      <column name="AFILIACION"/>
+    </property>
+    <property name="url" type="string">
+      <column name="URL"/>
+    </property>
+    <property name="versionId" type="string">
+      <column name="VERSION"/>
+    </property>
+    <property name="command" type="string">
+      <column name="COMMAND"/>
+    </property>
+    <property name="accessCode" type="string">
+      <column name="ACCESS_CODE"/>
+    </property>
+    <property name="merchant" type="string">
+      <column name="MERCHANT"/>
+    </property>
+    <property name="returnUrl" type="string">
+      <column name="RETURN_URL"/>
+    </property>
+    <property name="secureScret" type="string">
+      <column name="SECURE_SECRET"/>
+    </property>
+    <property name="actionUrl" type="string">
+      <column name="ACTION_URL"/>
+    </property>
+    <property name="claveInstitucionBancaria" type="string">
+      <column name="CLAVE_INSTITUCION_BANCARIA"/>
+    </property>
+    <property name="validaBanamex" type="java.lang.Integer">
+      <column name="VALIDA_BANAMEX"/>
+    </property>
+    <property name="trnCashbackAmount" type="java.lang.Integer">
+      <column name="TRN_CASHBACK_AMOUNT"/>
+    </property>
+    <property name="trnTipAmount" type="java.lang.Integer">
+      <column name="TRN_TIP_AMOUNT"/>
+    </property>
+     <property name="urlCancelacion" type="string">
+      <column name="URL_CANCELACION"/>
+    </property>
+     <property name="urlDevolucion" type="string">
+      <column name="URL_DEVOLUCION"/>
+    </property>
+    <property name="trnCurId" type="string">
+      <column name="TRN_CUR_ID1"/>
+    </property>
+    <property name="nombreEmpresa" type="string">
+      <column name="NOMBRE_EMPRESA"/>
+    </property>
+    <property name="currency" type="java.lang.Integer">
+      <column name="CURRENCY"/>
+    </property>
+    <property name="afiliacionDefault" type="java.lang.Integer">
+      <column name="AFILIACION_DEFAULT"/>
+    </property>
+    <property name="estatusId" type="java.lang.Integer">
+        <column name="ESTATUS_ID"/>
+    </property>
+    <property name="eliminadoId" type="java.lang.Integer">
+        <column name="ELIMINADO_ID"/>
+    </property>
+    <property name="tipoCanalVentaId" type="java.lang.Integer">
+        <column name="TIPO_CANAL_VENTA"/>
+    </property>
+    <property name="canalVentaId" type="java.lang.Integer">
+        <column name="CANAL_VENTA"/>
+    </property>
+    <property name="tieneParcializacion" type="string">
+        <column name="TIENE_PARCIALIZACION"/>
+    </property>
+    <property name="tieneTerminales" type="string">
+        <column name="TIENE_TERMINALES"/>
+    </property>
+    <property name="creacionFecha" type="timestamp">
+        <column name="CREACION_FECHA"/>
+    </property>
+    <property name="creacionUsuario" type="java.lang.Integer">
+        <column name="CREACION_USUARIO"/>
+    </property>
+    <property name="modificacionFecha" type="timestamp">
+        <column name="MODIFICACION_FECHA"/>
+    </property>
+    <property name="modificacionUsuario" type="java.lang.Integer">
+        <column name="MODIFICACION_USUARIO"/>
+    </property>
+  </class>
+</hibernate-mapping>

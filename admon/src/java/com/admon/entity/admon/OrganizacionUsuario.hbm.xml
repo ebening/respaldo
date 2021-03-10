@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.admon.entity.admon.OrganizacionUsuario" table="ORGANIZACION_USUARIO">
+        <id name="organizacionUsuarioId" type="java.lang.Integer">
+            <column name="ORGANIZACION_USUARIO_ID"/>
+            <generator class="increment"/>
+        </id>
+        <property name="organizacionId" type="java.lang.Integer">
+            <column name="ORGANIZACION_ID"/>
+        </property>
+        <property name="usuarioAdmon" type="string">
+            <column name="USUARIO_ADMON"/>
+        </property>
+        <property name="contrasena" type="string">
+            <column name="CONTRASENA"/>
+        </property>
+        <property name="contrasenaWeblogic" type="string">
+            <column name="CONTRASENA_WEBLOGIC"/>
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE"/>
+        </property>
+        <property name="apellidoPaterno" type="string">
+            <column name="APELLIDO_PATERNO"/>
+        </property>
+        <property name="apellidoMaterno" type="string">
+            <column name="APELLIDO_MATERNO"/>
+        </property>
+        <property name="correo" type="string">
+            <column name="CORREO"/>
+        </property>
+        <property name="telefono" type="string">
+            <column name="TELEFONO"/>
+        </property>
+        <property name="extencion" type="string">
+            <column name="EXTENSION"/>
+        </property>
+        <property name="celular" type="string">
+            <column name="CELULAR"/>
+        </property>
+        <property name="perfilId" type="java.lang.Integer">
+            <column name="PERFIL_ID"/>
+        </property>
+        <property name="preguntaId" type="java.lang.Integer">
+            <column name="PREGUNTA_ID"/>
+        </property>
+        <property name="ignoraMac" type="java.lang.Integer">
+            <column name="IGNORA_MAC"/>
+        </property>
+         <property name="fechaVigencia" type="timestamp">
+            <column name="FECHA_VIGENCIA"/>
+        </property>
+                 <property name="fechaUltimaSesion" type="timestamp">
+            <column name="FECHA_ULTIMA_SESION"/>
+        </property>
+        <property name="respuesta" type="string">
+            <column name="RESPUESTA"/>
+        </property>
+        <property name="puestoId" type="java.lang.Integer">
+            <column name="PUESTO_ID"/>
+        </property>
+        <property name="estatusId" type="java.lang.Integer">
+            <column name="ESTATUS_ID"/>
+        </property>
+        <property name="eliminadoId" type="java.lang.Integer">
+            <column name="ELIMINADO_ID"/>
+        </property>
+        <property name="creacionFecha" type="timestamp">
+            <column name="CREACION_FECHA"/>
+        </property>
+        <property name="creacionUsuario" type="java.lang.Integer">
+            <column name="CREACION_USUARIO"/>
+        </property>
+        <property name="modificacionFecha" type="timestamp">
+            <column name="MODIFICACION_FECHA"/>
+        </property>
+        <property name="modificacionUsuario" type="java.lang.Integer">
+            <column name="MODIFICACION_USUARIO"/>
+        </property>
+        <property name="correoAlterno" type="string">
+            <column name="CORREO_ALTERNO"/>
+        </property>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION"/>
+        </property>
+        <property name="zonaId" type="java.lang.Integer">
+            <column name="ZONA_ID"/>
+        </property>
+        <property name="usuarioId" type="java.lang.Integer">
+            <column name="USUARIO_ID"/>
+        </property>
+    </class>
+</hibernate-mapping>
+

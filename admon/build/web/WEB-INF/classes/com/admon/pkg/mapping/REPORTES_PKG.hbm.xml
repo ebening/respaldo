@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- Mapeo de los procedures/funciones de REPORTES_PKG -->
+    <!-- Function EDO_CTA -->
+    <sql-query name="estadoCuentaPRC" callable="true">
+        <return class="com.admon.pkg.entity.EstadoCuentaRS"/>
+        { call REPORTES_PKG.PRC_RECIBO_CLIENTE_PANTALLA(?, :fechaInicio, :fechaFin, :organizacionId, :eventoId, :presentacionId)}
+    </sql-query>
+    <sql-query name="estadoCuentaEncabezadoPRC" callable="true">
+        <return class="com.admon.pkg.entity.EstadoCuentaEncabezadoRS"/>
+        { call REPORTES_PKG.PRC_RECIBO_CLIENTE_EXPORTA(?, :fechaInicio, :fechaFin, :organizacionId, :eventoId, :presentacionId)}
+    </sql-query>
+    <sql-query name="estadoCuentaDetallePRC" callable="true">
+        <return class="com.admon.pkg.entity.EstadoCuentaDetalleRS"/>
+        { call REPORTES_PKG.PRC_RECIBO_CLIENTE_EXPORTA_DET(?, :fechaInicio, :fechaFin, :organizacionId, :eventoId, :presentacionId)}
+    </sql-query>
+</hibernate-mapping>

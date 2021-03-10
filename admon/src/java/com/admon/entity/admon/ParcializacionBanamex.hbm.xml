@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.admon.entity.admon.ParcializacionBanamex" table="AFILIACION_BANAMEX_PLAN">
+    <id name="parcializacionBanamexId" type="java.lang.Integer"> 
+        <column name="AFILIACION_BANAMEX_PLAN_ID"/>
+        <generator class="sequence">
+            <param name="sequence">AFILIACION_BANAMEX_PLAN_SEQ</param> 
+        </generator>
+     </id>
+    <property name="afiliacionBanamex" type="string">
+      <column name="AFILIACION"/>
+    </property>
+    <property name="claveInstitucionBancaria" type="string">
+      <column name="CLAVE_INSTITUCION_BANCARIA"/>
+    </property>
+    <property name="plan" type="string">
+      <column name="PLAN_ID"/>
+    </property>
+    <property name="plazo" type="java.lang.Integer">
+      <column name="PLAZO"/>
+    </property>
+     <property name="claveEstatus" type="string">
+      <column name="CLAVE_ESTATUS"/>
+    </property>
+    <property name="creacionFecha" type="timestamp">
+        <column name="CREACION_FECHA"/>
+    </property>
+    <property name="creacionUsuario" type="java.lang.Integer">
+        <column name="CREACION_USUARIO"/>
+    </property>
+    <property name="modificacionFecha" type="timestamp">
+        <column name="MODIFICACION_FECHA"/>
+    </property>
+    <property name="modificacionUsuario" type="java.lang.Integer">
+        <column name="MODIFICACION_USUARIO"/>
+    </property>
+  </class>
+</hibernate-mapping>
